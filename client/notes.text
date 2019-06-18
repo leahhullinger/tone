@@ -1,0 +1,8 @@
+@media (min-width,etc) {
+  p {
+    font-size: 1.5rem
+  }
+}
+
+design small to large
+put media queries after reg styling at the bottom
