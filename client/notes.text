@@ -6,3 +6,12 @@
 
 design small to large
 put media queries after reg styling at the bottom
+
+FlexBox
+
+.container {
+  display: flex;
+  flex-flow: row nowrap // flex-direction flex-wrap
+  align-items: default is stretch, position of the cross axis
+  justify-content: 
+}

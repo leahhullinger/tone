@@ -8,7 +8,7 @@ export const Header = () => (
     {/* <p className={styles.descriptTone}>
       check the tone of your email before you send it.
     </p> */}
-    <h1 className={styles.titleInkblot}>Personality</h1>
+    {/* <h1 className={styles.titleInkblot}>Personality</h1> */}
     {/* <p className={styles.descriptInkblot}>
       Get a personality assessment by submitting 150+ words you've written.
     </p> */}

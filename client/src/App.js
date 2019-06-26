@@ -3,6 +3,7 @@ import axios from "axios";
 import { Header } from "./component/Header/Header";
 import "./App.css";
 import keyboardIMG from "./keyboard-498396_1920.jpg";
+import { Button } from "./component/Button/Button";
 
 class App extends Component {
   constructor(props) {
@@ -33,47 +34,52 @@ class App extends Component {
   };
 
   render() {
+    console.log("sentence tones", this.state.sentenceTones);
     return (
       <div className="App">
         <Header />
         <div className="content">
-          {/* <div className="description">
-            <h2>
-              wondering how your email will come across? Run a quick tone
-              analysis before you send it.{" "}
-            </h2>
-          </div> */}
+          <div className="wrapper">
+            <h2 className="description">Your words say a lot about you.</h2>
+          </div>
           <div className="inputWrapper">
             <textarea
               rows={10}
               className="user-input"
               onChange={e => this.setState({ userInput: e.target.value })}
             />
-            <button className="btn" onClick={this.getToneResults}>
-              check your tone
-            </button>
+            <Button onClick={this.getToneResults} btnText="Check Your Tone" />
+
+            {!!this.state.toneSummary && (
+              <div>
+                <div>
+                  <p>The overall tone is: </p>
+                </div>
+                {this.state.toneSummary.tones.map(tones => (
+                  <div key={tones.tone_id}>{tones.tone_name}</div>
+                ))}
+                {this.state.sentenceTones.map(sentence => {
+                  return (
+                    <div key={sentence.sentence_id}>
+                      <div>
+                        {sentence.tones.map(tone => {
+                          return (
+                            <div key={tone.tone_id}>
+                              <p>{tone.tone_name}</p>
+                              <p>{tone.score}</p>
+                            </div>
+                          );
+                        })}
+                        ))}
+                      </div>
+                      <div>{sentence.text}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
-
-        {!!this.state.toneSummary && (
-          <div>
-            <div>
-              <h1>Tone Summary:</h1>
-              <p>the text you submitted included these tones: </p>
-            </div>
-            {this.state.toneSummary.tones.map(tone => (
-              <div key={tone.tone_id}>{tone.tone_name}</div>
-            ))}
-            {this.state.sentenceTones.map(sentence => {
-              return (
-                <div key={sentence.sentence_id}>
-                  <div>{sentence.text}</div>
-                  <div>{sentence.tones.tone_name}</div>
-                </div>
-              );
-            })}
-          </div>
-        )}
       </div>
     );
   }

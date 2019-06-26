@@ -9,27 +9,33 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* background-image: url("keyboard-498396_1920.jpg"); */
+  height: 65%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  align-self: flex-end;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 30px;
 }
 
 .description {
-  flex: 1;
-  /* justify-content: right; */
-  align-self: right;
-  font-size: 36px;
-  text-align: left;
-  padding: 0 50px;
-  margin: 0 auto;
-}
-h2 {
-  /* background-color: pink; */
-  padding-left: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
 }
 
-span {
-  background-color: pink;
+@media (min-width: 1180px) {
+  .wrapper {
+    margin: 0;
+    justify-content: center;
+  }
+  .description {
+    text-align: right;
+  }
 }
 
 .inputWrapper {
@@ -40,8 +46,6 @@ span {
   margin: 50px auto;
   padding: 25px;
   width: 75%;
-  /* border: 1.25px solid blue;
-  border-radius: 3px; */
 }
 
 .inputHeader {
@@ -52,12 +56,12 @@ span {
   padding: 0;
   margin: 0;
 }
-p {
+/* p {
   font-size: 24px;
   padding: 10px;
   margin: 0;
   text-transform: uppercase;
-}
+} */
 
 .user-input {
   flex: 1;
