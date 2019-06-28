@@ -123,34 +123,3 @@
   background: white;
   border: none;
 }
-
-.btnWrapper {
-  display: flex;
-  justify-content: center;
-  align-content: right;
-  padding: 20px 0;
-  width: 100%;
-  height: 40px;
-  background-color: white;
-}
-
-.btn {
-  width: 250px;
-  height: 100%;
-  color: blue;
-  background-color: white;
-  text-decoration: none;
-  height: 50px;
-  border-image: none;
-  border: 3px solid orangered;
-  border-radius: 23px;
-  color: orangered;
-  font-size: 24px;
-  align-self: flex-end;
-  margin-top: 20px;
-}
-
-.btn:hover {
-  background-color: orangered;
-  color: white;
-}
