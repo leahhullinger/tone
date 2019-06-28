@@ -51,31 +51,36 @@ class App extends Component {
             <Button onClick={this.getToneResults} btnText="Check Your Tone" />
 
             {!!this.state.toneSummary && (
-              <div>
+              <div className="responseWrapper">
                 <div>
-                  <p>The overall tone is: </p>
-                </div>
-                {this.state.toneSummary.tones.map(tones => (
-                  <div key={tones.tone_id}>{tones.tone_name}</div>
-                ))}
-                {this.state.sentenceTones.map(sentence => {
-                  return (
-                    <div key={sentence.sentence_id}>
-                      <div>
-                        {sentence.tones.map(tone => {
-                          return (
-                            <div key={tone.tone_id}>
-                              <p>{tone.tone_name}</p>
-                              <p>{tone.score}</p>
-                            </div>
-                          );
-                        })}
-                        ))}
+                  <div className="responseHeader">
+                    <h2>The overall tone of your text is: </h2>
+                    {this.state.toneSummary.tones.map(tones => (
+                      <div className="tones" key={tones.tone_id}>
+                        <h3>{tones.tone_name}</h3>
                       </div>
-                      <div>{sentence.text}</div>
-                    </div>
-                  );
-                })}
+                    ))}
+                  </div>
+                  {this.state.sentenceTones.map(sentence => {
+                    return (
+                      <div
+                        className="sentencesWrapper"
+                        key={sentence.sentence_id}
+                      >
+                        <div className="toneWrapper">
+                          {sentence.tones.map(tone => {
+                            return (
+                              <div key={tone.tone_id}>{tone.tone_name}</div>
+                            );
+                          })}
+                        </div>
+                        <div className="sentence">
+                          <p>{sentence.text}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>

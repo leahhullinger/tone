@@ -39,6 +39,7 @@
 }
 
 .inputWrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -46,6 +47,50 @@
   margin: 50px auto;
   padding: 25px;
   width: 75%;
+}
+
+.responseWrapper {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  flex-wrap: scroll;
+  background-color: white;
+  padding: 20px;
+  padding-left: 30px;
+}
+
+.responseHeader h3 {
+  margin: 0;
+  padding-top: 5px;
+}
+.tones {
+  display: flex;
+  flex-direction: column;
+}
+
+.toneWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentencesWrapper {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
+}
+
+.sentence {
+  align-self: left;
+  display: flex;
+}
+.sentence p {
+  display: flex;
+  align-self: right;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 .inputHeader {
