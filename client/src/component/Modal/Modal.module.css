@@ -1,0 +1,27 @@
+.background {
+  background-color: rgba(38, 38, 38, 0.3);
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  padding: 20px;
+  background-color: white;
+  z-index: 100;
+  border-radius: 5px;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn {
+  align-self: flex-end;
+}

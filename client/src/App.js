@@ -5,19 +5,28 @@ import "./App.css";
 import keyboardIMG from "./keyboard-498396_1920.jpg";
 import { Button } from "./component/Button/Button";
 import { TextArea } from "./component/TextArea/TextArea";
+import { Modal } from "./component/Modal/Modal";
+import { ResponseModal } from "./component/Response/Response";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isOpen: false,
+      isLoading: false,
       userInput: "",
-      toneSummary: null,
-      sentenceTones: []
+      result: null
     };
   }
 
+  onOpenModal;
+  onCloseModal = () => {
+    this.setState({ isOpen: false });
+  };
+
   getToneResults = () => {
+    this.setState({ isLoading: true });
     axios
       .post("http://localhost:3005/api/tone-request", {
         userText: this.state.userInput
@@ -25,8 +34,9 @@ class App extends Component {
       .then(response => {
         console.log(response);
         this.setState({
-          toneSummary: response.data.document_tone,
-          sentenceTones: response.data.sentences_tone
+          isLoading: false,
+          isOpen: true,
+          result: response.data
         });
       })
       .catch(error => {
@@ -38,6 +48,12 @@ class App extends Component {
     console.log("sentence tones", this.state.sentenceTones);
     return (
       <div className="App">
+        {!!this.state.isOpen && (
+          <ResponseModal
+            onClose={() => this.setState({ isOpen: false })}
+            result={this.state.result}
+          />
+        )}
         <Header />
         <div className="content">
           <div className="wrapper">
@@ -49,37 +65,6 @@ class App extends Component {
             />
             <Button onClick={this.getToneResults} btnText="Check Your Tone" />
           </div>
-          {!!this.state.toneSummary && (
-            <div className="responseWrapper">
-              <div>
-                <div className="responseHeader">
-                  <h2>The overall tone of your text is: </h2>
-                  {this.state.toneSummary.tones.map(tones => (
-                    <div className="tones" key={tones.tone_id}>
-                      <h3>{tones.tone_name}</h3>
-                    </div>
-                  ))}
-                </div>
-                {this.state.sentenceTones.map(sentence => {
-                  return (
-                    <div
-                      className="sentencesWrapper"
-                      key={sentence.sentence_id}
-                    >
-                      <div className="toneWrapper">
-                        {sentence.tones.map(tone => {
-                          return <div key={tone.tone_id}>{tone.tone_name}</div>;
-                        })}
-                      </div>
-                      <div className="sentence">
-                        <p>{sentence.text}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
         </div>
       </div>
       // </div>

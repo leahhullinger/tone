@@ -75,16 +75,14 @@
 }
 
 .sentencesWrapper {
-  width: 60%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
 }
 
 .sentence {
   align-self: left;
-  display: flex;
 }
 .sentence p {
   display: flex;
