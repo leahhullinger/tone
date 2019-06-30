@@ -34,6 +34,7 @@ export class ResponseModal extends Component {
     const { overallTones, tonesBySentence } = this.state;
     return (
       <Modal
+        onClose={this.props.onClose}
         title="The overall tone of your text is:"
         subtitle={
           !!overallTones && (
@@ -53,9 +54,10 @@ export class ResponseModal extends Component {
                 return (
                   <div className={styles.sentencesWrapper} key={s.sentence}>
                     <div className={styles.toneWrapper}>
-                      {s.tones.map(tone => {
-                        return <div key={tone.name}>{tone.name}</div>;
-                      })}
+                      {!!s.tones &&
+                        s.tones.map(tone => {
+                          return <div key={tone.name}>{tone.name}</div>;
+                        })}
                     </div>
                     <div className={styles.sentence}>
                       <p>{s.sentence}</p>

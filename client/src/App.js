@@ -48,7 +48,7 @@ class App extends Component {
     console.log("sentence tones", this.state.sentenceTones);
     return (
       <div className="App">
-        {!!this.state.isOpen && (
+        {!!this.state.isOpen && this.state.result && (
           <ResponseModal
             onClose={() => this.setState({ isOpen: false })}
             result={this.state.result}
