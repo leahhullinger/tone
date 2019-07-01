@@ -1,2 +1,3 @@
 watsonConfig.json
 .env
+/node_modules
