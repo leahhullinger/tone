@@ -1,16 +1,13 @@
 .App {
   height: 100vh;
-  overflow-y: auto;
   background-image: url("keyboard-498396_1920.jpg");
   background-repeat: no-repeat;
-  background-position: left bottom fixed;
+  background-position: top right;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  height: 65%;
-  justify-content: flex-end;
   align-items: center;
 }
 

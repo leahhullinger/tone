@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faBorderNone } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Modal.module.css";
 
 export const Modal = ({ title, subtitle, content, footer, onClose }) => {

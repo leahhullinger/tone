@@ -8,15 +8,18 @@
 
 .btn {
   text-decoration: none;
-  background-color: transparent;
+  background-color: #0ff2c9;
   border: 2px solid #0ff2c9;
   border-radius: 5px;
   font-size: 24px;
   font-weight: 700;
   padding: 17px;
+  outline-color: none;
+  color: #262626;
 }
 
 .btn:hover {
-  border: 2px solid #0ff2c9;
+  border: 3px solid #f2ae30;
   background-color: #0ff2c9;
+  outline-color: none;
 }

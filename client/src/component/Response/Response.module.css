@@ -1,0 +1,10 @@
+.sentenceTone {
+  font-size: 16px;
+  font-weight: 700;
+  color: #393c40;
+}
+
+.sentence p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
