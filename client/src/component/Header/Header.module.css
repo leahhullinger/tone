@@ -13,8 +13,8 @@
 .titleInkblot {
   font-size: 3.5rem;
   line-height: 1.5;
-  /* flex: 1; */
   margin: 0;
+  color: #0ff2c9;
 }
 .titleTone:hover,
 .titleInkblot:hover {

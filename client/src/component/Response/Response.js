@@ -56,7 +56,14 @@ export class ResponseModal extends Component {
                     <div className={styles.toneWrapper}>
                       {!!s.tones &&
                         s.tones.map(tone => {
-                          return <div key={tone.name}>{tone.name}</div>;
+                          return (
+                            <div
+                              className={styles.sentenceTone}
+                              key={tone.name}
+                            >
+                              {tone.name}
+                            </div>
+                          );
                         })}
                     </div>
                     <div className={styles.sentence}>

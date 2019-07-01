@@ -20,7 +20,6 @@ class App extends Component {
     };
   }
 
-  onOpenModal;
   onCloseModal = () => {
     this.setState({ isOpen: false });
   };
@@ -62,6 +61,8 @@ class App extends Component {
           <div className="inputWrapper">
             <TextArea
               onChange={e => this.setState({ userInput: e.target.value })}
+              userInput={this.state.userInput}
+              onClearText={() => this.setState({ userInput: "" })}
             />
             <Button onClick={this.getToneResults} btnText="Check Your Tone" />
           </div>
