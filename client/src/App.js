@@ -56,9 +56,9 @@ class App extends Component {
         )}
         <Header />
         <div className="content">
-          <div className="wrapper">
+          {/* <div className="wrapper">
             <h2 className="description">Your words say a lot about you.</h2>
-          </div>
+          </div> */}
           <div className="inputWrapper">
             <TextArea
               onChange={e => this.setState({ userInput: e.target.value })}
